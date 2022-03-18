@@ -16,11 +16,17 @@ public partial class MainWindow : Window
 
         try
         {
-            var dirList = Directory.GetDirectories("C:\\");
+            var dirList = Directory.GetDirectories("C:\\").ToList();
+            var fileList = Directory.GetFiles("C:\\").ToList();
 
             foreach (string dir in dirList)
             {
                 Directories.Items.Add(dir);
+            }
+
+            foreach (string file in fileList)
+            {
+                Directories.Items.Add(file);
             }
 
             Directories.MouseDoubleClick += Directories_MouseDoubleClick;
@@ -33,20 +39,32 @@ public partial class MainWindow : Window
 
     private void Directories_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-        int index = this.Directories.SelectedIndex;
-
-        var newDir = Directories.Items.GetItemAt(index);
-
-        CurrentDirectory.Text = newDir.ToString();
-
-        var dirList = Directory.GetDirectories(CurrentDirectory.Text);
-
-        Directories.Items.Clear();
-
-        foreach (string dir in dirList)
+        try
         {
-            Directories.Items.Add(dir);
+            int index = this.Directories.SelectedIndex;
+
+            var newDir = Directories.Items.GetItemAt(index);
+
+            CurrentDirectory.Text = newDir.ToString();
+
+            var dirList = Directory.GetDirectories(CurrentDirectory.Text);
+            var fileList = Directory.GetFiles(CurrentDirectory.Text);
+
+            Directories.Items.Clear();
+
+            foreach (string dir in dirList)
+            {
+                Directories.Items.Add(dir);
+            }
+
+            foreach (var file in fileList)
+            {
+                Directories.Items.Add(file);
+            }
+        }
+        catch 
+        {
+            MessageBox.Show("Cannot open a file.", "Error");
         }
     }
 }
-
