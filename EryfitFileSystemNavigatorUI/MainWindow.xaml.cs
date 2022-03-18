@@ -30,11 +30,6 @@ namespace EryfitFileSystemNavigatorUI
         {
             var drives = DriveInfo.GetDrives();
 
-            //foreach (var drive in drives) 
-            //{
-            //    Control.MakeButton(drive.Name, 20, 30, 80, 120, HorizontalAlignment.Left, VerticalAlignment.Top, ButtonStackPanel);                
-            //}
-
             try
             {
                 var dirList = Directory.GetDirectories("C:\\");
