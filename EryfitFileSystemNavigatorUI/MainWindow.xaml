@@ -7,26 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" >
     <Grid Name="parentGrid" VerticalAlignment="Top">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1"/>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="*" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
 
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="auto" />
-                </Grid.ColumnDefinitions>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
 
-                <StackPanel Name="ButtonStackPanel"  Grid.Row="1" Orientation="Horizontal" MinHeight="30" VerticalAlignment="Top" Height="40" Grid.Column="0">
+        <StackPanel Name="ButtonStackPanel"  Grid.Row="1" Orientation="Horizontal" MinHeight="30" VerticalAlignment="Top" Height="40" Grid.Column="0">
 
-                </StackPanel>
+        </StackPanel>
+        <TextBlock Name="CurrentDirectory" Text="C:\" Grid.Column="0" Grid.Row="1"></TextBlock>
+        <ListBox Name="Directories" Grid.Row="2" Grid.ColumnSpan="2">
 
-                <TextBlock Name="CurrentDirectory" Text="C:\" Grid.Column="1" Grid.Row="1"></TextBlock>
+        </ListBox>
 
-                <ListBox Name="Directories" Grid.Row="2" Grid.ColumnSpan="2">
-
-                </ListBox>
-
-            </Grid>
+    </Grid>
 </Window>
