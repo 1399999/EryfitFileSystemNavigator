@@ -54,16 +54,53 @@ public partial class MainWindow : Window
 
     private void Directories_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-        try
+        int index = this.Directories.SelectedIndex;
+
+        var newDir = Directories.Items.GetItemAt(index);
+
+        if (Directory.Exists(PathModel.Path + "\\" + newDir))
         {
-            int index = this.Directories.SelectedIndex;
-
-            var newDir = Directories.Items.GetItemAt(index);
-
-            if (Directory.Exists(PathModel.Path + "\\" + newDir))
+            try
             {
-                PathModel.Path += "\\";
-                PathModel.Path += newDir;
+                if (newDir != "..")
+                {
+                    PathModel.Path += "\\";
+                    PathModel.Path += newDir;
+                }
+                else
+                {
+                    string nwpth = "";
+                    List<string> corpaths = new List<string>();
+
+                    var spltpath = PathModel.Path.Split("\\").ToList();
+
+                    foreach (var item in spltpath)
+                    {
+                        if (item != "")
+                        {
+                            corpaths.Add(item);
+                        }
+                    }
+
+                    if (corpaths.Count > 1)
+                    {
+                        var spltpthlngth = corpaths.Count;
+
+                        var newspl = spltpthlngth - 1;
+
+                        for (int i = 0; i < newspl; i++)
+                        {
+                            nwpth += spltpath[i];
+                            nwpth += "\\";
+                        }
+
+                        PathModel.Path = nwpth;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot go farther back than a drive.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
 
                 CurrentDirectory.Text = PathModel.Path.ToString();
 
@@ -74,6 +111,8 @@ public partial class MainWindow : Window
                 var fileList = Directory.GetFiles(PathModel.Path);
 
                 Directories.Items.Clear();
+
+                Directories.Items.Add("..");
 
                 foreach (string dir in dirList)
                 {
@@ -99,12 +138,12 @@ public partial class MainWindow : Window
                     Directories.Items.Add(fl.Name);
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Cannot open a file.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Cannot go farther back than a drive.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        catch
+        else
         {
             MessageBox.Show("Cannot open a file.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
