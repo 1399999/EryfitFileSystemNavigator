@@ -58,7 +58,9 @@ public partial class MainWindow : Window
 
         var newDir = Directories.Items.GetItemAt(index);
 
-        if (Directory.Exists(PathModel.Path + "\\" + newDir))
+        var newPath = PathModel.Path + "\\" + newDir;
+
+        if (Directory.Exists(newPath))
         {
             try
             {
@@ -143,9 +145,44 @@ public partial class MainWindow : Window
                 MessageBox.Show("Cannot go farther back than a drive.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+        else if (File.Exists(newPath))
+        {
+            try
+            {
+                FileContents fc = new FileContents();
+
+                FileInfo fl = new FileInfo(newPath);
+
+                var lns = File.ReadLines(newPath).ToList();
+
+                foreach (var ln in lns)
+                {
+                    fc.txt.Text += ln;
+                    fc.txt.Text += "\n";
+                }
+
+                //using (StreamReader sr = new StreamReader(fs))
+                //{
+                //    var ln = sr.ReadLine();
+
+                //    if (ln != null)
+                //    {
+                //        fc.txt.Text += "\n";
+                //        fc.txt.Text += ln;
+                //    }
+                //}
+                
+
+                fc.Show();
+            }
+            catch
+            {
+                MessageBox.Show("An unexpected error occured.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
         else
         {
-            MessageBox.Show("Cannot open a file.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            MessageBox.Show("Invalid Directory " + newPath, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
