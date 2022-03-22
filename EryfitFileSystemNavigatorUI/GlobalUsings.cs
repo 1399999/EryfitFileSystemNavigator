@@ -6,3 +6,5 @@ global using EryfitFileSystemNavigatorUI.Models;
 global using System.Collections.Generic;
 global using System.Windows.Controls;
 global using System;
+global using EryfitFileSystemNavigatorUI.Functionality;
+global using EryfitFileSystemNavigatorUI.Functionality.Navigator;
