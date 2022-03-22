@@ -14,6 +14,20 @@ public partial class MainWindow : Window
     {
         try
         {
+            var drives = DriveInfo.GetDrives();
+
+            foreach (var drive in drives)
+            {
+                ButtonStackPanel.Children.Add(new Button()
+                {
+                    Content = drive.Name,
+                    Height = 30,
+                    Width = 50
+                });
+            }
+
+            
+
             List<DirectoryInfo> dirs = new List<DirectoryInfo>();
             List<FileInfo> files = new List<FileInfo>();
 
@@ -160,18 +174,6 @@ public partial class MainWindow : Window
                     fc.txt.Text += ln;
                     fc.txt.Text += "\n";
                 }
-
-                //using (StreamReader sr = new StreamReader(fs))
-                //{
-                //    var ln = sr.ReadLine();
-
-                //    if (ln != null)
-                //    {
-                //        fc.txt.Text += "\n";
-                //        fc.txt.Text += ln;
-                //    }
-                //}
-                
 
                 fc.Show();
             }
