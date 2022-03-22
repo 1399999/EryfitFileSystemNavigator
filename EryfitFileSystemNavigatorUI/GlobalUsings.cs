@@ -5,3 +5,4 @@ global using System.Linq;
 global using EryfitFileSystemNavigatorUI.Models;
 global using System.Collections.Generic;
 global using System.Windows.Controls;
+global using System;

@@ -18,15 +18,27 @@ public partial class MainWindow : Window
 
             foreach (var drive in drives)
             {
-                ButtonStackPanel.Children.Add(new Button()
+                //ButtonStackPanel.Children.Add(new Button()
+                //{
+                //    Content = drive.Name,
+                //    Height = 30,
+                //    Width = 50,
+                //    Click += new EventHandler(Drives_Click)
+                //});
+
+                Button btn = new Button()
                 {
                     Content = drive.Name,
                     Height = 30,
-                    Width = 50
-                });
+                    Width = 50,
+                };
+
+                btn.Click += new RoutedEventHandler(Drives_Click);
+
+                ButtonStackPanel.Children.Add(btn);
             }
 
-            
+            //ButtonStackPanel.MouseRightButtonDown += Drives_Click;
 
             List<DirectoryInfo> dirs = new List<DirectoryInfo>();
             List<FileInfo> files = new List<FileInfo>();
@@ -66,9 +78,61 @@ public partial class MainWindow : Window
         }
     }
 
+    private void Drives_Click(object sender, RoutedEventArgs e)
+    {
+        var btn = (Button)sender;
+        var nm = btn.Content;
+
+        if (nm != null)
+        {
+            try
+            {
+                Directories.Items.Clear();
+
+                PathModel.Path = nm.ToString();
+
+                CurrentDirectory.Text = PathModel.Path.ToString();
+
+                var dirList = Directory.GetDirectories(PathModel.Path).ToList();
+                var fileList = Directory.GetFiles(PathModel.Path).ToList();
+
+                List<DirectoryInfo> dirs = new List<DirectoryInfo>();
+                List<FileInfo> files = new List<FileInfo>();
+
+                foreach (string dir in dirList)
+                {
+                    DirectoryInfo dirinfo = new DirectoryInfo(dir);
+
+                    dirs.Add(dirinfo);
+                }
+
+                foreach (string file in fileList)
+                {
+                    FileInfo filinfo = new FileInfo(file);
+
+                    files.Add(filinfo);
+                }
+
+                foreach (var dr in dirs)
+                {
+                    Directories.Items.Add(dr.Name);
+                }
+
+                foreach (var fl in files)
+                {
+                    Directories.Items.Add(fl.Name);
+                }
+            }
+            catch (Exception exptn)
+            {
+                MessageBox.Show(exptn.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+    }
+
     private void Directories_MouseDoubleClick(object sender, MouseButtonEventArgs e)
     {
-        int index = this.Directories.SelectedIndex;
+        int index = Directories.SelectedIndex;
 
         var newDir = Directories.Items.GetItemAt(index);
 
