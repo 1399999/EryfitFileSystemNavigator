@@ -17,4 +17,3 @@ public static class Navigator
         mw.LoadFileSystemClickFunctionality();
     }
 }
-

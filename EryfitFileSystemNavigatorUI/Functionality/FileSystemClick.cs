@@ -42,8 +42,8 @@ public static class FileSystemClick
 
                         for (int i = 0; i < newspl; i++)
                         {
-                            nwpth += spltpath[i];
-                            nwpth += "\\";
+                            nwpth += corpaths[i];
+                            nwpth += @"\";
                         }
 
                         PathModel.Path = nwpth;
