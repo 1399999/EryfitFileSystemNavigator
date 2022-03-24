@@ -22,7 +22,49 @@
         <TextBlock Name="CurrentDirectory" Text="C:\" Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom" FontSize="16" Margin="10,0,0,5"></TextBlock>
 
         <Menu Grid.Row="1" Grid.Column="0" MaxWidth="45" HorizontalAlignment="Left" FontSize="20">
-            <MenuItem Header="_File"></MenuItem>
+            <MenuItem Header="_File">
+                <MenuItem Header="_New File">
+                    <MenuItem.Icon>
+                        <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/256/add-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_New Folder">
+                    <MenuItem.Icon>
+                        <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/256/add-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Open">
+                    <MenuItem.Icon>
+                        <Image Source="https://www.vhv.rs/dpng/d/526-5265047_green-curved-arrow-png-transparent-png.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Open In Terminal">
+                    <MenuItem.Icon>
+                        <Image Source="https://cdn.icon-icons.com/icons2/213/PNG/256/Mac_Terminal-01_25118.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Properties">
+                    <MenuItem.Icon>
+                        <Image Source="https://icons.iconarchive.com/icons/brisbanetanks/tools/256/Wrench-icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Rename">
+                    <MenuItem.Icon>
+                        <Image Source="https://cdn4.iconfinder.com/data/icons/VistaICO_Toolbar-Icons/256/Rename.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Delete">
+                    <MenuItem.Icon>
+                        <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/128/delete-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="_Exit">
+                    <MenuItem.Icon>
+                        <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/128/delete-icon.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
         </Menu>
         
         <StackPanel Name="ButtonStackPanel"  Grid.Row="1" Orientation="Horizontal" MinHeight="30" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right">
