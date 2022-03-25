@@ -10,3 +10,4 @@ global using EryfitFileSystemNavigatorUI.Functions;
 global using EryfitFileSystemNavigatorUI.Functionality.Navigator;
 global using Microsoft.Win32;
 global using EryfitFileSystemNavigatorUI.Functionality.FileMenuFunctions;
+global using System.Windows.Media;

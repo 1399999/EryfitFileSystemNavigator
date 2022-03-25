@@ -10,12 +10,51 @@ public static class Startup
 
             foreach (var drive in drives)
             {
+                LinearGradientBrush lgb = new LinearGradientBrush();
+                lgb.StartPoint = new Point(1, 0);
+                lgb.EndPoint = new Point(1, 1);
+                lgb.GradientStops.Add(new GradientStop()
+                {
+                    Color = new Color()
+                    {
+                        R = 204,
+                        G = 204,
+                        B = 204,
+                    },
+
+                    Offset = 0,
+                });
+
+                lgb.GradientStops.Add(new GradientStop()
+                {
+                    Color = new Color()
+                    {
+                        R = 102,
+                        G = 102,
+                        B = 102,
+                    },
+
+                    Offset = 0.45,
+                });
+
+                lgb.GradientStops.Add(new GradientStop()
+                {
+                    Color = new Color()
+                    {
+                        R = 212,
+                        G = 212,
+                        B = 212,
+                    },
+
+                    Offset = 1.65,
+                });
 
                 Button btn = new Button()
                 {
                     Content = drive.Name,
                     Height = 30,
                     Width = 50,
+                    Background = lgb,
                 };
 
                 btn.Click += new RoutedEventHandler(mw.Drives_Click);

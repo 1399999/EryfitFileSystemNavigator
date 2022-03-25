@@ -139,10 +139,44 @@
         </Menu>
         
         <StackPanel Name="ButtonStackPanel"  Grid.Row="1" Orientation="Horizontal" MinHeight="30" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Right">
+            <StackPanel.Background>
+                <LinearGradientBrush>
+                    <GradientStop>
+                        <GradientStop.Color>
+                            #ECECEC
+                        </GradientStop.Color>
+                        <GradientStop.Offset>
+                            0.0
+                        </GradientStop.Offset>
+                    </GradientStop>
+                    <GradientStop>
+                        <GradientStop.Color>
+                            #FFFFFF
+                        </GradientStop.Color>
+                        <GradientStop.Offset>
+                            0.45
+                        </GradientStop.Offset>
+                    </GradientStop>
+                    <GradientStop>
+                        <GradientStop.Color>
+                            #DEDEDE
+                        </GradientStop.Color>
+                        <GradientStop.Offset>
+                            1.65
+                        </GradientStop.Offset>
+                    </GradientStop>
 
+                    <LinearGradientBrush.StartPoint>
+                        1,0
+                    </LinearGradientBrush.StartPoint>
+                    <LinearGradientBrush.EndPoint>
+                        1,1
+                    </LinearGradientBrush.EndPoint>
+                </LinearGradientBrush>
+            </StackPanel.Background>
         </StackPanel>
         <ListBox Name="Directories" Grid.Row="3" Grid.ColumnSpan="2">
-
+            
         </ListBox>
     </Grid>
 </Window>
