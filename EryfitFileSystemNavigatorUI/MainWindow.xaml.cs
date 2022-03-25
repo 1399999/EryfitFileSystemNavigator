@@ -29,4 +29,9 @@ public partial class MainWindow : Window
     {
         Navigator.NavigateNewFile();
     }
+
+    private void NewFolderMenuItem_Click(object sender, RoutedEventArgs e)
+    {
+        Navigator.NavigateNewFolder();
+    }
 }
