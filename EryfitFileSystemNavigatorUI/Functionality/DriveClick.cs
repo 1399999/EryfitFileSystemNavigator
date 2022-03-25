@@ -11,7 +11,7 @@ public static class DriveClick
         {
             try
             {
-                mw.Directories.Items.Clear();
+                mw.ClearLsBx();
 
                 PathModel.Path = nm.ToString();
 

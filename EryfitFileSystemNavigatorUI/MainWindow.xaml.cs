@@ -24,4 +24,9 @@ public partial class MainWindow : Window
     {
         this.NavigateFileSystemClick();
     }
+
+    private void NewFileMenuItem_Click(object sender, RoutedEventArgs e)
+    {
+        Navigator.NavigateNewFile();
+    }
 }

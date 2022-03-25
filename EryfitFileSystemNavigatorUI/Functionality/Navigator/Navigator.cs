@@ -16,4 +16,9 @@ public static class Navigator
     {
         mw.LoadFileSystemClickFunctionality();
     }
+
+    public static void NavigateNewFile()
+    {
+        NewFile.LoadNewFileFunctionality();
+    }
 }

@@ -2,6 +2,6 @@
 
 public static class PathModel
 {
-    public static string Path { get; set; } = "C:\\";
+    public static string Path { get; set; } = @"C:\";
 }
 

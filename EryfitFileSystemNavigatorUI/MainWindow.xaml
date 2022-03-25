@@ -23,12 +23,12 @@
 
         <Menu Grid.Row="1" Grid.Column="0" MaxWidth="45" HorizontalAlignment="Left" FontSize="20">
             <MenuItem Header="_File">
-                <MenuItem Header="_New File">
+                <MenuItem Header="_New File" Click="NewFileMenuItem_Click">
                     <MenuItem.Icon>
                         <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/256/add-icon.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_New Folder">
+                <!--<MenuItem Header="_New Folder">
                     <MenuItem.Icon>
                         <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/256/add-icon.png"/>
                     </MenuItem.Icon>
@@ -63,7 +63,7 @@
                     <MenuItem.Icon>
                         <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/128/delete-icon.png"/>
                     </MenuItem.Icon>
-                </MenuItem>
+                </MenuItem>-->
             </MenuItem>
         </Menu>
         

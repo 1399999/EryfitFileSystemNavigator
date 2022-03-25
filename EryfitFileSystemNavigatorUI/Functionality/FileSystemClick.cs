@@ -8,7 +8,16 @@ public static class FileSystemClick
 
         var newDir = mw.Directories.Items.GetItemAt(index);
 
-        var newPath = PathModel.Path + "\\" + newDir;
+        var newPath = string.Empty;
+
+        if (!PathModel.Path.EndsWith(@":\"))
+        {
+            newPath = PathModel.Path + "\\" + newDir;
+        }
+        else
+        {
+            newPath = PathModel.Path + newDir;
+        }
 
         if (Directory.Exists(newPath))
         {
@@ -16,8 +25,7 @@ public static class FileSystemClick
             {
                 if (newDir != "..")
                 {
-                    PathModel.Path += "\\";
-                    PathModel.Path += newDir;
+                    PathModel.Path = newPath;
                 }
                 else
                 {
@@ -62,7 +70,7 @@ public static class FileSystemClick
                 var dirList = Directory.GetDirectories(PathModel.Path);
                 var fileList = Directory.GetFiles(PathModel.Path);
 
-                mw.Directories.Items.Clear();
+                mw.ClearLsBx();
 
                 mw.Directories.Items.Add("..");
 
