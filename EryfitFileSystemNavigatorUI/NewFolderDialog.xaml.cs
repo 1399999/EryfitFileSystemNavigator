@@ -28,7 +28,7 @@ namespace EryfitFileSystemNavigatorUI
         {
             this.LoadNewFolderFunctionality();
 
-            this.Close();
+            Close();
         }
     }
 }
