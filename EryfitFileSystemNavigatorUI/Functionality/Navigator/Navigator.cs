@@ -21,9 +21,4 @@ public static class Navigator
     {
         NewFile.LoadNewFileFunctionality();
     }
-
-    public static void NavigateNewFolder()
-    {
-        NewFolder.LoadNewFolderFunctionality();
-    }
 }

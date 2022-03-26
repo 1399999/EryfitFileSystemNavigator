@@ -8,7 +8,7 @@
         Title="New Folder Dialog" Height="120" Width="250">
     <Grid>
         <TextBlock Text="Folder Name:" FontSize="18" HorizontalAlignment="Center"/>
-        <TextBox Height="40" Width="200" FontSize="20"/>
-        <Button Content="Add" Height="35" Width="200" VerticalAlignment="Bottom"/>
+        <TextBox Height="40" Width="200" FontSize="20" Name="NameTextBox"/>
+        <Button Content="Add" Height="35" Width="200" VerticalAlignment="Bottom" Click="NameButton_Click" />
     </Grid>
 </Window>

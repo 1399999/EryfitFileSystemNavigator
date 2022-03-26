@@ -23,5 +23,12 @@ namespace EryfitFileSystemNavigatorUI
         {
             InitializeComponent();
         }
+
+        public void NameButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.LoadNewFolderFunctionality();
+
+            this.Close();
+        }
     }
 }

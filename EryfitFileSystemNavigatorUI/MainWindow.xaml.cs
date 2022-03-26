@@ -32,6 +32,7 @@ public partial class MainWindow : Window
 
     private void NewFolderMenuItem_Click(object sender, RoutedEventArgs e)
     {
-        Navigator.NavigateNewFolder();
+        NewFolderDialog nfd = new NewFolderDialog();
+        nfd.ShowDialog();
     }
 }
