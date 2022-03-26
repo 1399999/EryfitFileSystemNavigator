@@ -4,15 +4,8 @@ public static class NewFolder
 {
     public static void LoadNewFolderFunctionalitySetup()
     {
-        try 
-        {
-            NewFolderDialog dlg = new NewFolderDialog();
-            dlg.ShowDialog(); 
-        }
-        catch 
-        { 
-            
-        }
+        NewFolderDialog dlg = new NewFolderDialog();
+        dlg.ShowDialog(); 
     }
 
     public static void LoadNewFolderFunctionality(this NewFolderDialog dlg)
@@ -22,6 +15,7 @@ public static class NewFolder
         if (!PathModel.Path.EndsWith(@":\"))
         {
             DirectoryInfo dirinfo = new DirectoryInfo(PathModel.Path + @"\" + txt);
+
             if (!dirinfo.Exists)
             {
                 dirinfo.Create();
@@ -34,7 +28,16 @@ public static class NewFolder
 
         else
         {
-            Directory.CreateDirectory(PathModel.Path + txt);
+            DirectoryInfo dirinfo = new DirectoryInfo(PathModel.Path + txt);
+
+            if (!dirinfo.Exists)
+            {
+                dirinfo.Create();
+            }
+            else
+            {
+                MessageBox.Show("The Directory " + txt + " already exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
