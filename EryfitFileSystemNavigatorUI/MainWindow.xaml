@@ -25,45 +25,97 @@
             <MenuItem Header="_File">
                 <MenuItem Header="_New File" Click="NewFileMenuItem_Click">
                     <MenuItem.Icon>
-                        <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/256/add-icon.png"/>
+                        <Image Source="https://icons.iconarchive.com/icons/janik-baumgartner/woocons/32/Document-1-Add-icon.png"/>
                     </MenuItem.Icon>
+                    <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
+                    <MenuItem.BorderThickness>
+                        0
+                    </MenuItem.BorderThickness>
                 </MenuItem>
                 <MenuItem Header="_New Folder" Click="NewFolderMenuItem_Click" >
                     <MenuItem.Icon>
-                        <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/256/add-icon.png"/>
+                        <Image Source="https://icons.iconarchive.com/icons/custom-icon-design/pretty-office-5/256/Folder-Add-icon.png"/>
                     </MenuItem.Icon>
+                    <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
+                    <MenuItem.BorderThickness>
+                        0
+                    </MenuItem.BorderThickness>
                 </MenuItem>
-                <!--<MenuItem Header="_Open">
+                <MenuItem Header="_Open">
                     <MenuItem.Icon>
-                        <Image Source="https://www.vhv.rs/dpng/d/526-5265047_green-curved-arrow-png-transparent-png.png"/>
+                        <Image Source="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-10/128/Open-file-icon.png"/>
                     </MenuItem.Icon>
+                    <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
+                    <MenuItem.BorderThickness>
+                        0
+                    </MenuItem.BorderThickness>
                 </MenuItem>
-                <MenuItem Header="_Open In Terminal">
+                <!--<MenuItem Header="_Open In Terminal">
                     <MenuItem.Icon>
                         <Image Source="https://cdn.icon-icons.com/icons2/213/PNG/256/Mac_Terminal-01_25118.png"/>
                     </MenuItem.Icon>
+                <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
                 </MenuItem>
                 <MenuItem Header="_Properties">
                     <MenuItem.Icon>
                         <Image Source="https://icons.iconarchive.com/icons/brisbanetanks/tools/256/Wrench-icon.png" />
                     </MenuItem.Icon>
+                <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
                 </MenuItem>
                 <MenuItem Header="_Rename">
                     <MenuItem.Icon>
                         <Image Source="https://cdn4.iconfinder.com/data/icons/VistaICO_Toolbar-Icons/256/Rename.png" />
                     </MenuItem.Icon>
+                <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
                 </MenuItem>
                 <MenuItem Header="_Delete">
                     <MenuItem.Icon>
                         <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/128/delete-icon.png"/>
                     </MenuItem.Icon>
+                <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
                 </MenuItem>
                 <Separator/>
                 <MenuItem Header="_Exit">
                     <MenuItem.Icon>
                         <Image Source="https://icons.iconarchive.com/icons/awicons/vista-artistic/128/delete-icon.png"/>
                     </MenuItem.Icon>
+                <MenuItem.Background>
+                        <SolidColorBrush>
+                            White
+                        </SolidColorBrush>
+                    </MenuItem.Background>
                 </MenuItem>-->
+                <MenuItem.BorderThickness>
+                    0
+                </MenuItem.BorderThickness>
             </MenuItem>
         </Menu>
         
@@ -80,6 +132,9 @@
                     White
                 </SolidColorBrush>
             </ListBox.Background>
+            <ListBox.BorderThickness>
+                0
+            </ListBox.BorderThickness>
         </ListBox>
     </Grid>
 </Window>

@@ -2,11 +2,11 @@
 
 public static class NewFolder
 {
-    public static void LoadNewFolderFunctionalitySetup()
-    {
-        NewFolderDialog dlg = new NewFolderDialog();
-        dlg.ShowDialog(); 
-    }
+    //public static void LoadNewFolderFunctionalitySetup()
+    //{
+    //    NewFolderDialog dlg = new NewFolderDialog();
+    //    dlg.ShowDialog(); 
+    //}
 
     public static void LoadNewFolderFunctionality(this NewFolderDialog dlg)
     {

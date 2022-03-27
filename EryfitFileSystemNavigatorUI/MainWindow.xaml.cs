@@ -27,7 +27,8 @@ public partial class MainWindow : Window
 
     private void NewFileMenuItem_Click(object sender, RoutedEventArgs e)
     {
-        Navigator.NavigateNewFile();
+        NewFileDialog nfd = new NewFileDialog();
+        nfd.ShowDialog();
     }
 
     private void NewFolderMenuItem_Click(object sender, RoutedEventArgs e)

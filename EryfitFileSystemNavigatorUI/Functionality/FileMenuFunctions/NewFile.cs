@@ -2,29 +2,59 @@
 
 public static class NewFile
 {
-    public static void LoadNewFileFunctionality()
+    public static void LoadNewFileFunctionality(this NewFileDialog nfd)
     {
-        SaveFileDialog sv = new SaveFileDialog();
+        //SaveFileDialog sv = new SaveFileDialog();
 
-        sv.CheckFileExists = false;
-        sv.CreatePrompt = true;
-        sv.Title = "Create File - Eryfit";
-        sv.CheckPathExists = false;
+        //sv.CheckFileExists = false;
+        //sv.CreatePrompt = true;
+        //sv.Title = "Create File - Eryfit";
+        //sv.CheckPathExists = false;
 
-        var dialogResult = sv.ShowDialog();
+        //var dialogResult = sv.ShowDialog();
 
-        if (dialogResult.Value == true)
+        //if (dialogResult.Value == true)
+        //{
+        //    var pth = Path.GetFullPath(sv.FileName);
+
+        //    if (!File.Exists(pth))
+        //    {
+        //        File.Create(pth);
+        //    }
+        //}
+        //else
+        //{
+
+        //}
+
+        var txt = nfd.NameTextBox.Text;
+
+        if (!PathModel.Path.EndsWith(@":\"))
         {
-            var pth = Path.GetFullPath(sv.FileName);
+            FileInfo fileinfo = new FileInfo(PathModel.Path + @"\" + txt);
 
-            if (!File.Exists(pth))
+            if (!fileinfo.Exists)
             {
-                File.Create(pth);
+                fileinfo.Create();
+            }
+            else
+            {
+                MessageBox.Show("The Directory " + txt + " already exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
         else
         {
+            FileInfo fileinfo = new FileInfo(PathModel.Path + txt);
 
+            if (!fileinfo.Exists)
+            {
+                fileinfo.Create();
+            }
+            else
+            {
+                MessageBox.Show("The Directory " + txt + " already exists.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
